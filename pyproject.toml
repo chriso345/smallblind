@@ -1,0 +1,47 @@
+[project]
+name = "smallblind"
+version = "0.1.0"
+description = "Simulate color vision deficiency on images, matplotlib figures, and color palettes."
+readme = "README.md"
+authors = [
+    { name = "Chris O" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.5.3",
+    "pillow>=12.3.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.9,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pyrefly>=0.63.1", "pytest>=9.0.3", "pytest-cov>=7.1.0", "ruff>=0.15.12"]
+mpl = [
+    "matplotlib>=3.11.2",
+]
+
+[tool.pyrefly]
+project-excludes = [
+  "**/tests",
+  "**/tests/**/*",
+  ".venv",
+  ".venv/**/*",
+  "build",
+  "dist",
+  "docs",
+  "docs/**/*",
+]
+python-version = "3.12.0"
+infer-with-first-use = false
+
+[tool.ruff]
+line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=smallblind --cov-report=term-missing --cov-report=html"
+
+[tool.coverage.run]
+source = ["smallblind"]
