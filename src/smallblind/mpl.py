@@ -1,26 +1,16 @@
 from __future__ import annotations
 
 import io
-from typing import TYPE_CHECKING
 
+from matplotlib import figure
 from PIL import Image
 
 from .cvd import CVDLiteral, CVDType
 from .image import simulate_image
 
-if TYPE_CHECKING:
-    from matplotlib.figure import Figure
-
-try:
-    import matplotlib.figure  # noqa: F401, pyrefly: ignore[unused-import]
-except ImportError as exc:
-    raise ImportError(
-        "matplotlib is required for smallblind.mpl; install it with 'pip install smallblind[mpl]'"
-    ) from exc
-
 
 def simulate_figure(
-    fig: Figure,
+    fig: figure.Figure,
     cvd: CVDType | CVDLiteral,
     severity: float | None = None,
     dpi: float | None = None,

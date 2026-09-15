@@ -716,6 +716,7 @@ name = "smallblind"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "matplotlib" },
     { name = "numpy" },
     { name = "pillow" },
 ]
@@ -727,12 +728,10 @@ dev = [
     { name = "pytest-cov" },
     { name = "ruff" },
 ]
-mpl = [
-    { name = "matplotlib" },
-]
 
 [package.metadata]
 requires-dist = [
+    { name = "matplotlib", specifier = ">=3.11.2" },
     { name = "numpy", specifier = ">=2.5.3" },
     { name = "pillow", specifier = ">=12.3.0" },
 ]
@@ -744,4 +743,3 @@ dev = [
     { name = "pytest-cov", specifier = ">=7.1.0" },
     { name = "ruff", specifier = ">=0.15.12" },
 ]
-mpl = [{ name = "matplotlib", specifier = ">=3.11.2" }]

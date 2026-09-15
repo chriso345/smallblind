@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING
 from .compare import compare
 from .cvd import CVDLiteral, CVDType
 from .image import ImageInput, simulate_array, simulate_image
+from .mpl import simulate_figure as _simulate_figure
 from .palette import ColorTuple, simulate_palette
 from .safety import (
     DEFAULT_THRESHOLD,
@@ -53,6 +54,4 @@ def simulate_figure(
     dpi: float | None = None,
 ) -> PILImage:
     """Simulate a CVD type on a matplotlib Figure."""
-    from .mpl import simulate_figure as _simulate_figure
-
     return _simulate_figure(fig, cvd, severity, dpi)
