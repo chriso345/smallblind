@@ -12,3 +12,4 @@ wheels/
 # Tests and coverage reports
 .coverage
 htmlcov/
+examples/output/
